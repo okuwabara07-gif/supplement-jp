@@ -1,7 +1,4 @@
-import { getAllPosts } from '@/lib/posts'
-import Link from 'next/link'
 export default function Home() {
-  const posts = getAllPosts()
   return (
         {/* アフィリエイト */}
         <div style={{margin:'2rem 0',padding:'1rem',background:'linear-gradient(135deg,#faf7ff,#f5eeff)',borderRadius:'16px',border:'1.5px solid #e8d4ff'}}>
@@ -17,14 +14,37 @@ export default function Home() {
             </a>
           </div>
         </div>
-    <main style={{maxWidth:'900px',margin:'0 auto',padding:'2rem 1.5rem'}}>
-      <h1 style={{fontSize:'1.5rem',fontWeight:500,marginBottom:'2rem'}}>Supplement</h1>
-      <div>{posts.map(p=>(
-        <div key={p.slug} style={{padding:'1rem 0',borderBottom:'0.5px solid #eee'}}>
-          <Link href={'/blog/'+p.slug} style={{fontSize:'1rem',color:'inherit',textDecoration:'none'}}>{p.title}</Link>
-          <div style={{fontSize:'0.75rem',color:'#888',marginTop:'4px'}}>{p.date}</div>
+    <main>
+      <header className="site-header">
+        <div className="site-nav-bar">
+          <div className="site-logo">Hair Colour Lab</div>
+          <div style={{display:'flex',flexDirection:'column' as const,gap:4}}>
+            <div style={{width:20,height:'0.5px',background:'#2A2218'}}></div>
+            <div style={{width:14,height:'0.5px',background:'#2A2218'}}></div>
+            <div style={{width:20,height:'0.5px',background:'#2A2218'}}></div>
+          </div>
         </div>
-      ))}</div>
+        <div className="eyebrow" style={{marginBottom:8}}>K · BEAUTY PORTAL</div>
+        <div className="section-title">ヘアカラーのランキング</div>
+      </header>
+
+      <div className="portal-banner">
+        <div className="portal-banner-label">FEATURED</div>
+        <div className="portal-banner-title">AIパーソナルカラー診断 × 韓国コスメ</div>
+        <a href="https://beauty-portal-jp.vercel.app" target="_blank" className="portal-banner-link">
+          BEAUTY PORTAL →
+        </a>
+      </div>
+
+      <div className="section-label">ヘアカラー · TOP ARTICLES</div>
+
+      <footer className="site-footer">
+        <span>© 2026 AOKAE LLC</span>
+        <a href="https://beauty-portal-jp.vercel.app" target="_blank"
+          style={{color:'#A89F94',borderBottom:'0.5px solid #DDD9D3',paddingBottom:1}}>
+          BEAUTY PORTAL →
+        </a>
+      </footer>
     </main>
-  )
+  );
 }
