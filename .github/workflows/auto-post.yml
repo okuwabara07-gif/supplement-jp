@@ -1,12 +1,8 @@
 name: Auto Post Articles
+
 on:
-  schedule:
-    - cron: '0 22 * * *'
-    - cron: '0 2 * * *'
-    - cron: '0 6 * * *'
-    - cron: '0 8 * * *'
-    - cron: '0 12 * * *'
   workflow_dispatch:
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -21,6 +17,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           AMAZON_TRACKING_ID: ${{ secrets.AMAZON_TRACKING_ID }}
+          RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
         run: node scripts/auto-generate.js
       - name: Commit and push
         run: |
