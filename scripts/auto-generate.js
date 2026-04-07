@@ -7,7 +7,7 @@ const AMAZON_TRACKING_ID = process.env.AMAZON_TRACKING_ID || 'haircolorab22-22';
 const RAKUTEN_AFFILIATE_ID = process.env.RAKUTEN_AFFILIATE_ID || '5253b9ed.08f9d938.5253b9ee.e71aefe8';
 const MOSHIMO_ID = '1184522';
 
-const SITE_NAME = 'サプリメントLab';
+const SITE_NAME = 'サプリLab';
 const TOPIC = 'サプリメント・健康食品・栄養';
 const CRITERIA = '効果・成分・コスパ・飲みやすさ・安全性';
 
